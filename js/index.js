@@ -2,7 +2,7 @@
 ////////////////// 1ère partie : data.photographers (section nommée photographers du fichier)
 
 async function getPhotographers() {
-  let photographers = await fetch("../data/photographers.json")
+  let photographers = await fetch("data/photographers.json")
     .then((response) => response.json())
     .then((data) => {
       return data.photographers;
