@@ -3,9 +3,8 @@
 
   #photograph-header {
     position: relative;
-    height: 300px;
-    margin: 0 100px;
-    margin-bottom: 30px;
+    height: 200px;
+    margin: 0 100px 0 100px;
     background-color: $color-tertiary-background;
     padding: 50px;
 
@@ -46,7 +45,7 @@
 
 .contact_button {
   position: absolute;
-  left: 40%;
+  left: 50%;
   right: 50%;
   top: 20%;
   bottom: 20%;
@@ -69,9 +68,10 @@
   margin-top: 100px;
 
   article {
+    display : flex;
     justify-self: center;
     display: flex;
-    justify-content: center;
+    //justify-content: center;
     align-items: center;
     flex-direction: column;
 
@@ -80,7 +80,7 @@
       width: 100%;
       margin: 20px 0 0 0;
       justify-content: space-between;
-      color: $color-artists-name;
+      color: $color-primary;
     }
 
     a {
@@ -90,12 +90,14 @@
 
     img,
     video {
+      cursor: pointer;
       object-fit: cover;
       height: 300px;
       width: 350px;
       border-radius: 5px;
       box-shadow: $profile-picture-shadow;
     }
+
 
     h2 {
       display: flex;
