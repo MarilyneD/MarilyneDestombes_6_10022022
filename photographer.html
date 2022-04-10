@@ -8,19 +8,23 @@
       href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
       rel="stylesheet"
     />
+    <meta
+      name="title"
+      content="Fisheye : le site des photographes indépendants"
+    />
     <title>Fisheye - photographe</title>
   </head>
   <body>
     <header>
-      <a href="index.html">
+      <a id="home-page-link" href="index.html">
         <img
           src="assets/images/logo.png"
-          alt="FishEye Home page"
+          alt="Page d'accueil du site Fisheye"
           class="logo"
         />
       </a>
     </header>
-     <!-- ==================================         PHOTOGRAPH HEADER          ==========================================================-->
+    <!-- ==================================      PHOTOGRAPH HEADER       =============================================-->
     <main id="main">
       <div class="photograph-header" id="photograph-header">
         <button class="contact_button" id="contact" onclick="launchModal()">
@@ -28,30 +32,35 @@
         </button>
       </div>
 
-      <!-- ================================== DROPDOWN OU MENU DEROULANT DE TRI ==========================================================-->
-      <p id="sort-menu-title" tabindex="-1" aria-label="trier par...">
+      <!-- ================================== DROPDOWN OU MENU DEROULANT DE TRI =======================================-->
+      <p id="sort-menu-title" tabindex="0" aria-label="trier par...">
         Trier par
       </p>
       <select id="sort-menu" name="sort menu" id="sort-menu">
-        <option id="sort-likes" value="sort-likes" onclick="sortLikes()" >Popularité</option>
-        <option value="sort-date" onclick="sortDate()" >Date</option>
-        <option value="sort-title" onclick="sortTitle()" >Titre</option>
+        <option value="sort-likes" onclick="sortLikes()">Popularité</option>
+        <option value="sort-date" onclick="sortDate()">Date</option>
+        <option value="sort-title" onclick="sortTitle()">Titre</option>
       </select>
 
-       <!-- ================================== GALERIE VIDE QUI EST REMPLIE GRACE AU FACTORY PATTERN ======================================-->
+      <!-- ================================== GALERIE VIDE QUI EST REMPLIE GRACE AU FACTORY PATTERN =================-->
       <div id="gallery"></div>
 
-
-       <!-- ============================================ LIGHT BOX OU CAROUSSEL ===========================================================-->
+      <!-- ==================================== LIGHT BOX OU CAROUSSEL ==============================================-->
       <div id="lightbox-background">
-        <div id="lightbox-close" aria-label="bouton fermer ou touche escape" tabindex="1">
+        <div
+          id="lightbox-close"
+          aria-label="bouton fermer ou touche escape"
+          tabindex="1"
+          
+        >
           x
         </div>
         <div
           id="lightbox-previous"
           aria-label="bouton précédent ou touche flèche gauche"
           tabindex="1"
-        > <
+        >
+          <
         </div>
         <img id="imageFS" src="" alt="" />
         <video id="videoFS" src="" alt=""></video>
@@ -59,26 +68,27 @@
           id="lightbox-next"
           aria-label="bouton suivant ou touche flèche droite"
           tabindex="1"
-        >  >
+        >
+          >
         </div>
       </div>
 
-      <!-- ================================== POPUP OU ENCART AVEC LE NOMBRE TOTAL DE LIKES =================================================-->
+      <!-- ================================== POPUP OU ENCART AVEC LE NOMBRE TOTAL DE LIKES ====================-->
       <div class="popup-text">
         <span class="likes-total"
           ><span id="number-total-likes"></span
-          ><img src="assets/icons/black_heart.svg" alt="total likes"
+          ><img src="assets/icons/black_heart.svg" alt="nombre total de j'aime"
         /></span>
         <span id="price"></span>
       </div>
     </main>
 
-    <!--=========================================== MODALE OU FORMALAIRE DE CONTACT ==========================================================-->
+    <!--==================================== MODALE OU FORMALAIRE DE CONTACT ==================================-->
 
     <div class="bground">
       <div class="content">
         <!-- Croix qui ferme le formulaire -->
-        <span class="close"></span>
+        <button class="close" tabindex="0" aria-label="Bouton de fermeture du formulaire" style='background-image: url("assets/icons/close.svg")'> </button>
         <div class="modal-body">
           <span id="modal-title"></span>
           <form
@@ -100,7 +110,7 @@
                 id="first"
                 name="first"
                 autocomplete="off"
-                aria-label="First name"
+                aria-label="Entrez votre prénom"
               /><br />
             </div>
             <!-- champs nom dans le formulaire -->
@@ -115,7 +125,7 @@
                 id="last"
                 name="last"
                 autocomplete="off"
-                aria-label="Last name"
+                aria-label="Entrez votre nom"
               /><br />
             </div>
             <!-- champs email dans le formulaire -->
@@ -129,7 +139,7 @@
                 type="email"
                 id="email"
                 name="email"
-                aria-label="email"
+                aria-label="Entrez votre adresse mél"
               /><br />
             </div>
             <!-- champs texte dans le formulaire -->
@@ -140,7 +150,7 @@
                 id="textarea"
                 rows="5"
                 cols="50"
-                aria-label="Text area"
+                aria-label="Tapez ici votre message"
               ></textarea>
             </div>
 
@@ -165,10 +175,7 @@
       </div>
     </div>
 
-
-
-
-     <!-- ======================================== SCRIPTS  =============================================================-->
+    <!-- ======================================== SCRIPTS  ==================================================-->
     <script src="js/modal.js"></script>
     <script src="js/counter.js"></script>
     <script src="js/photographerpage.js"></script>

@@ -16,9 +16,12 @@ h1 {
   margin-right: 100px;
 }
 
+#home-page-link {
+  margin-left: 100px;
+}
+
 .logo {
   height: 50px;
-  margin-left: 100px;
 }
 
 .photographer_section {
@@ -69,7 +72,8 @@ h1 {
   margin: 3px 0 6px 0;
 }
 
-:focus-visible, video:focus {
+:focus-visible,
+video:focus {
   outline: 0;
   box-shadow: 0 0 0 6px rgba(255, 81, 0, 0.5);
 }
@@ -327,26 +331,9 @@ input {
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
-}
-
-.close:before,
-.close:after {
-  position: absolute;
-  left: 15px;
-  content: " ";
-  height: 33px;
-  /* barre blanche de 33px de haut et 3 de large pour faire la croix */
-  width: 3px;
-  background-color: #fff;
-}
-
-.close:before {
-  transform: rotate(45deg);
-  /*fait tourner la barre pour faire une croix  */
-}
-
-.close:after {
-  transform: rotate(-45deg);
+  background-color: #DB8876;
+  background-size: 32px;
+  border: none;
 }
 
 /* custom select styles */
@@ -519,10 +506,6 @@ input {
   font-size: 18px;
   line-height: 23px;
   color: #000000;
-}
-
-#sort-menu-title:focus {
-  outline: blue solid 20px;
 }
 
 select {

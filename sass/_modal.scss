@@ -103,8 +103,6 @@ input {
   border: 2px solid #3876ac;
 }
 
-
-
 .close {
   position: absolute;
   right: 15px;
@@ -114,26 +112,9 @@ input {
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
-}
-
-.close:before,
-.close:after {
-  position: absolute;
-  left: 15px;
-  content: " ";
-  height: 33px;
-  /* barre blanche de 33px de haut et 3 de large pour faire la croix */
-  width: 3px;
-  background-color: #fff;
-}
-
-.close:before {
-  transform: rotate(45deg);
-  /*fait tourner la barre pour faire une croix  */
-}
-
-.close:after {
-  transform: rotate(-45deg);
+  background-color: $color-secondary;
+  background-size: 32px;
+  border : none;
 }
 
 /* custom select styles */
@@ -274,7 +255,7 @@ input {
 
 .data-sent img {
   padding-top: 40px;
-  width :50%;
+  width: 50%;
 }
 
 @keyframes modalopen {

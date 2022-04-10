@@ -1,38 +1,35 @@
-/////////////////// Fetch du fichier Json
-////////////////// 1ère partie : data.photographers
+// Fetch du fichier Json
+// 1ère partie : data.photographers
 
 async function getPhotographers() {
-  let photographers = await fetch("data/photographers.json")
+  const photographers = await fetch('data/photographers.json')
     .then((response) => response.json())
-    .then((data) => {
-      return data.photographers;
-    });
+    .then((data) => data.photographers);
   return photographers;
 }
 
-/////////////////// creation de la fonction qui permet la fabrication des cartes présentant chaque photographe  ///////////////////
+// creation de la fonction qui permet la fabrication des cartes présentant chaque photographe
 
-function photographerCardFactory(photographer, photographers) {
-  const photographerProfile = document.createElement("article");
-  const urlPhotographer = document.createElement("a");
-  const profilePicture = document.createElement("img");
-  const photographerName = document.createElement("h2");
-  const localisation = document.createElement("p");
-  const tagline = document.createElement("p");
-  const price = document.createElement("p");
+function photographerCardFactory(photographer) {
+  const photographerProfile = document.createElement('article');
+  const urlPhotographer = document.createElement('a');
+  const profilePicture = document.createElement('img');
+  const photographerName = document.createElement('h2');
+  const localisation = document.createElement('p');
+  const tagline = document.createElement('p');
+  const price = document.createElement('p');
 
-  photographerProfile.id = "photographer-" + photographer.id ;
-  urlPhotographer.href = "photographer.html?id=" + photographer.id;
-  profilePicture.src =
-    "assets/Photographers ID Photos/" + photographer.portrait;
-  profilePicture.alt = "Photo d'identité de l'artiste " + photographer.name;
+  photographerProfile.id = `photographer-${photographer.id}`;
+  urlPhotographer.href = `photographer.html?id=${photographer.id}`;
+  profilePicture.src = `assets/Photographers ID Photos/${photographer.portrait}`;
+  profilePicture.alt = `Photo d'identité de l'artiste ${photographer.name}`;
   photographerName.textContent = photographer.name;
-  localisation.id = "localisation";
-  localisation.textContent = photographer.city + ", " + photographer.country;
-  tagline.id = "tagline";
+  localisation.id = 'localisation';
+  localisation.textContent = `${photographer.city}, ${photographer.country}`;
+  tagline.id = 'tagline';
   tagline.textContent = photographer.tagline;
-  price.id = "price";
-  price.textContent = photographer.price + "€/jour";
+  price.id = 'price';
+  price.textContent = `${photographer.price}€/jour`;
 
   photographerProfile.appendChild(urlPhotographer);
   photographerProfile.appendChild(localisation);
@@ -44,13 +41,13 @@ function photographerCardFactory(photographer, photographers) {
   return photographerProfile;
 }
 
-/////////////////  Fonction principale d'initialisation qui s'appuie sur les autres fonctions
+//  Fonction principale d'initialisation qui s'appuie sur les autres fonctions
 
 async function init() {
-  let photographers = await getPhotographers();
-  const content = document.getElementById("photographer_section");
+  const photographers = await getPhotographers();
+  const content = document.getElementById('photographer_section');
   photographers.forEach((photographer) =>
-    content.appendChild(photographerCardFactory(photographer, photographers))
+    content.appendChild(photographerCardFactory(photographer))
   );
 }
 
