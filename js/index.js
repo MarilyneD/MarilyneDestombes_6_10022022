@@ -8,7 +8,7 @@ async function getPhotographers() {
   return photographers;
 }
 
-// creation de la fonction qui permet la fabrication des cartes présentant chaque photographe
+// creation de la fonction qui permet la fabrication des cartes présentant un seul photographe
 
 function photographerCardFactory(photographer) {
   const photographerProfile = document.createElement('article');
@@ -22,7 +22,7 @@ function photographerCardFactory(photographer) {
   photographerProfile.id = `photographer-${photographer.id}`;
   urlPhotographer.href = `photographer.html?id=${photographer.id}`;
   profilePicture.src = `assets/Photographers ID Photos/${photographer.portrait}`;
-  profilePicture.alt = `Photo d'identité de l'artiste ${photographer.name}`;
+  profilePicture.alt = `Photo d'identité de l'artiste`;
   photographerName.textContent = photographer.name;
   localisation.id = 'localisation';
   localisation.textContent = `${photographer.city}, ${photographer.country}`;

@@ -19,7 +19,7 @@
       <a id="home-page-link" href="index.html">
         <img
           src="assets/images/logo.png"
-          alt="Page d'accueil du site Fisheye"
+          alt="logo du site Fisheye"
           class="logo"
         />
       </a>
@@ -33,10 +33,10 @@
       </div>
 
       <!-- ================================== DROPDOWN OU MENU DEROULANT DE TRI =======================================-->
-      <p id="sort-menu-title" tabindex="0" aria-label="trier par...">
+      <p id="sort-menu-title" tabindex="0" aria-label="trier par">
         Trier par
       </p>
-      <select id="sort-menu" name="sort menu" id="sort-menu">
+      <select id="sort-menu" name="sort menu" >
         <option value="sort-likes" onclick="sortLikes()">Popularité</option>
         <option value="sort-date" onclick="sortDate()">Date</option>
         <option value="sort-title" onclick="sortTitle()">Titre</option>
@@ -60,10 +60,10 @@
           aria-label="bouton précédent ou touche flèche gauche"
           tabindex="1"
         >
-          <
+        &#x3C; 
         </div>
-        <img id="imageFS" src="" alt="" />
-        <video id="videoFS" src="" alt=""></video>
+        <img id="imageFS" src="assets/images/logo.png" alt="" />
+        <video id="videoFS" src="assets/images/logo.png" title=""></video>
         <div
           id="lightbox-next"
           aria-label="bouton suivant ou touche flèche droite"
@@ -83,7 +83,7 @@
       </div>
     </main>
 
-    <!--==================================== MODALE OU FORMALAIRE DE CONTACT ==================================-->
+    <!--==================================== MODALE OU FORMULAIRE DE CONTACT ==================================-->
 
     <div class="bground">
       <div class="content">
@@ -144,7 +144,7 @@
             </div>
             <!-- champs texte dans le formulaire -->
             <div class="formData" data-error="Vous devez entrer votre message">
-              <label for="message">Votre message</label><br />
+              <label for="textarea">Votre message</label><br />
               <textarea
                 class="text-control"
                 id="textarea"

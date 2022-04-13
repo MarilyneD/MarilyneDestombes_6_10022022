@@ -90,7 +90,7 @@ class Media {
   }
 
   video() {
-    this.video = `<video class="thumbnail" src= "assets/photographers/${this.photographer.name}/${this.media.video}" alt="${this.media.title}" controls = "true" tabindex="0"></video>`;
+    this.video = `<video class="thumbnail" src= "assets/photographers/${this.photographer.name}/${this.media.video}" title="${this.media.title}" controls = "true" tabindex="0"></video>`;
     this.init(this.video);
   }
 }
@@ -283,7 +283,9 @@ function lightboxFunction() {
 // FONCTION PRINCIPALE INIT QUI LANCE LES TACHES A EFFECTUER pour fabriquer  LA PAGE DU PHOTOGRAPHE avec galerie & coeurs
 
 async function init() {
+  
   const photographers = await getPhotographers();
+  // recherche de l'id dans la barre d'adresse, méthode ci-dessous :
   const queryParams = window.location.search;
   const urlParams = new URLSearchParams(queryParams);
   const photographerArtistId = urlParams.get("id");
