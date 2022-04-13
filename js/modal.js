@@ -26,10 +26,7 @@ function launchModal() {
   for (let step = 0; step < 3; step++) {
     formularyData[step].removeAttribute('data-error-visible');
   } // pour supprimer les bordures par défaut au lieu du rouge ou du bleu
-  //document.querySelector('.close').autofocus();
-  console.log("close",close);
-  //close.autofocus();
- firstname.focus();
+  firstname.focus();
 }
 
 // attendre un clic sur la classe close puis lancer la fonction closeModal
@@ -123,4 +120,4 @@ function validate() {
     email.value,
     message.value
   );
-}
+} 
