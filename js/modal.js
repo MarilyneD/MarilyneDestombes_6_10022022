@@ -29,14 +29,15 @@ function launchModal() {
   firstname.focus();
 }
 
-// attendre un clic sur la classe close puis lancer la fonction closeModal
-close.addEventListener('click', closeModal);
-btnClose.addEventListener('click', closeModal);
 
 // fonction permettant de fermer la modale en cliquant sur la croix
 function closeModal() {
   modalbg.style.display = 'none';
 }
+
+// attendre un clic sur la classe close puis lancer la fonction closeModal
+close.addEventListener('click', closeModal);
+
 
 // Deuxième partie validation
 // ___________________________________________________________________________________________________________________________________

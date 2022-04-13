@@ -67,7 +67,7 @@ class Media {
   init(media) {
     this.mediaContent.insertAdjacentHTML(
       "beforeend",
-      `<article>
+      `<article aria-label="vignette cliquable">
       ${media}
       <div class="cardtext">
         <h2>${this.media.title}</h2>
@@ -128,10 +128,12 @@ async function sortDate() {
 }
 
 async function sortTitle() {
-  arrayGallery.sort((a, b) => a.title.toLowerCase() > b.title.toLowerCase());
-
+  arrayGallery.sort((a, b) => a.title.localeCompare(b.title));
   await rebuildGallery();
 }
+
+
+
 
 // ACCESSIBILITE clavier : permettre le click ENTER sur le menu select dropdown
   const selectSortMenu = document.getElementById("sort-menu");
@@ -151,6 +153,26 @@ selectSortMenu.addEventListener("keydown", (event) => {
     }
   }
 });
+
+selectSortMenu.addEventListener("click", () => {   
+    console.log("click à la souris", selectSortMenu.selectedIndex);
+    switch (selectSortMenu.selectedIndex) {
+      case 0:
+        sortLikes();
+        break;
+      case 1:
+        sortDate();
+        break;
+      case 2:
+        sortTitle();
+        break;
+    }
+  
+});
+
+
+
+
 
 // LIGHT BOX
 
@@ -255,11 +277,11 @@ function lightboxFunction() {
   lightboxClose.addEventListener("click", () => {
     Close();
   });
-  document.addEventListener("keydown", (event) => {
-    if (event.code === "Escape") {
-      Close();
+   document.addEventListener("keydown", (event) => {
+     if (event.code === "Escape") {
+       Close();closeModal();
     }
-  });
+   });
 
   lightboxNext.addEventListener("click", () => {
     Next();
