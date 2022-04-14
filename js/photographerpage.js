@@ -188,10 +188,11 @@ function lightboxFunction() {
   mediaList.forEach((media) => {
     media.addEventListener('keydown', (event) => {
       if (event.code == 'Enter') {
-      if (media.image){lightboxBackground.querySelector("#imageFS").src = media.src;}
+      if (media.image){lightboxBackground.querySelector("#imageFS").src = media.src;lightboxBackground.querySelector("#imageFS").focus();}
       else{lightboxBackground.querySelector("#videoFS").src = media.src;
       lightboxBackground.querySelector("#videoFS").setAttribute("controls","true")};
-      lightboxBackground.querySelector("#imageFS").src = media.src;
+      lightboxBackground.querySelector("#videoFS").focus();
+      lightboxBackground.querySelector("#imageFS").src ="";
       const choosenMedia = Array.from(mediaList).find(
         (item) => item.src === media.src
       );
